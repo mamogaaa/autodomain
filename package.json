@@ -1,0 +1,32 @@
+{
+  "name": "autodomain",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c && echo \"#!/usr/bin/env node \\n\" > build/index2.js && cat build/index.js >> build/index2.js && rm build/index.js && cp build/index2.js build/index.js && chmod +X build/index.js && chmod 777 build/index.js && rm build/index2.js",
+    "start": "node build/index.js",
+    "prod": "yarn run build && NODE_ENV=production node build/index.js",
+    "dev": "nodemon -e coffee,pug --watch \"src/**/*\" --exec \"yarn run build && NODE_ENV=development node build/index.js\""
+  },
+  "bin": {
+    "autodomain": "build/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "coffeescript": "^2.3.1",
+    "inquirer": "^6.1.0",
+    "koa": "^2.5.2",
+    "koa-router": "^7.4.0",
+    "nodemon": "^1.18.3",
+    "pug": "^2.0.3",
+    "puppeteer": "^1.7.0",
+    "rollup": "^0.64.1",
+    "rollup-plugin-coffee-script": "^2.0.0",
+    "rollup-plugin-pug": "^0.1.6",
+    "sleep-promise": "^8.0.1"
+  },
+  "pkg": {
+    "assets": "node_modules/**/*"
+  }
+}
