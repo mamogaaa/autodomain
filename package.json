@@ -16,14 +16,10 @@
     "axios": "^0.18.0",
     "coffeescript": "^2.3.1",
     "inquirer": "^6.1.0",
-    "koa": "^2.5.2",
-    "koa-router": "^7.4.0",
     "nodemon": "^1.18.3",
-    "pug": "^2.0.3",
     "puppeteer": "^1.7.0",
     "rollup": "^0.64.1",
     "rollup-plugin-coffee-script": "^2.0.0",
-    "rollup-plugin-pug": "^0.1.6",
     "sleep-promise": "^8.0.1"
   },
   "pkg": {
